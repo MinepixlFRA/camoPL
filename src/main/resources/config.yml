@@ -1,0 +1,21 @@
+# ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+# ░  ░░░░  ░░        ░░   ░░░  ░░        ░░       ░░░        ░░  ░░░░  ░░  ░░░░░░░░        ░░       ░░
+# ▒   ▒▒   ▒▒▒▒▒  ▒▒▒▒▒    ▒▒  ▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒▒▒▒▒  ▒▒▒▒▒▒  ▒▒  ▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒▒▒▒▒  ▒▒▒▒  ▒
+# ▓        ▓▓▓▓▓  ▓▓▓▓▓  ▓  ▓  ▓▓      ▓▓▓▓       ▓▓▓▓▓▓  ▓▓▓▓▓▓▓    ▓▓▓▓  ▓▓▓▓▓▓▓▓      ▓▓▓▓       ▓▓
+# █  █  █  █████  █████  ██    ██  ████████  ███████████  ██████  ██  ███  ████████  ████████  ███  ██
+# █  ████  ██        ██  ███   ██        ██  ████████        ██  ████  ██        ██  ████████  ████  █
+# ████████████████████████████████████████████████████████████████████████████████████████████████████
+
+# Camo/config.yml
+
+# The "uncamo-mode" config determind when a degised player lost his camo, in any cases a player lost his camo when he die.
+# - killed : (Default) The player loose his camo only when he die.
+# - damage : The player loose his camo when he take a damage (the source of the damage dosen't  matter).
+# - timed : The player loose his camo when the countdown is over.
+uncamo-mode: killed
+
+# The "disable" config determind if the plugin work.
+# - false : (Default) The plugin work properly.
+# - true : The plugin don't work and every camo heads get deleted.
+# - unactive : The plugins don't work but camo heads is not deleted.
+disable: false

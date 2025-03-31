@@ -3,6 +3,7 @@ package fr.minepixl.camo.Event;
 import com.destroystokyo.paper.profile.PlayerProfile;
 import fr.minepixl.camo.Main;
 import fr.minepixl.camo.Utils.GetSkin;
+import fr.minepixl.camo.Utils.ResetSkin;
 import fr.minepixl.camo.Utils.SkullItemStack;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -19,6 +20,7 @@ public class EventClass implements Listener {
 
     @EventHandler
     public void onKill(PlayerDeathEvent event) {
+        ResetSkin.resetSkin(event.getPlayer());
         if (!(event.getDamageSource().getDirectEntity() instanceof final Player killer)) return;
         Player target = event.getPlayer();
         event.setDeathMessage("");
@@ -33,10 +35,10 @@ public class EventClass implements Listener {
         if (!(head.getPersistentDataContainer().has(new NamespacedKey(Main.getInstance(), "isCamoHead")))) return;
         event.getPlayer().getInventory().remove(event.getPlayer().getInventory().getItemInMainHand());
         final Player player = event.getPlayer();
-        final Player target = Bukkit.getPlayer(head.getOwner());
+        final String target = head.getOwner();
         final PlayerProfile playerProfile = player.getPlayerProfile();
-        playerProfile.setProperties(GetSkin.getSkin(target.getName()));
+        playerProfile.setProperties(GetSkin.getSkin(target));
         player.setPlayerProfile(playerProfile);
-        player.sendMessage("Vous êtes camouflé en " + target.getName());
+        player.sendMessage("Vous êtes camouflé en " + target);
     }
 }
