@@ -1,0 +1,13 @@
+name: Camo
+version: '1.0-SNAPSHOT'
+main: fr.minepixl.camo.Main
+api-version: '1.21'
+commands:
+  test:
+    description: Faire des testes, t'occupe.
+    permission: camo.test
+    permission-message: §cTu n'as pas la permission de faire cela.
+  camo:
+    description: Commandes relative au plugin Camo
+    permission: Camo.use
+    permission-message: §cTu n'as pas la permission de faire cela.
