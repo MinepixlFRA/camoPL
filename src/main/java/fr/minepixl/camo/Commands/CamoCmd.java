@@ -1,5 +1,6 @@
 package fr.minepixl.camo.Commands;
 
+import fr.minepixl.camo.Main;
 import fr.minepixl.camo.Utils.ResetSkin;
 import fr.minepixl.camo.Utils.SkullItemStack;
 import org.bukkit.command.Command;
@@ -47,20 +48,26 @@ public class CamoCmd implements CommandExecutor {
                         }
                         switch (args[2]) {
                             case "damage":
-//                                mettre config a damage
-                                sender.sendMessage("damage");
+                                Main.getInstance().getConfig().set("uncamo-mode", "damage");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("uncamo-mode"));
                                 return false;
                             case "killed":
-//                                mettre config a killed
-                                sender.sendMessage("killed");
+                                Main.getInstance().getConfig().set("uncamo-mode", "killed");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("uncamo-mode"));
                                 return false;
                             case "timed":
-//                                mettre config a timed
-                                sender.sendMessage("timed");
+                                Main.getInstance().getConfig().set("uncamo-mode", "timed");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("uncamo-mode"));
                                 return false;
                             case "help":
-//                                donner la doc d'aide
-                                sender.sendMessage("help");
+                                sender.sendMessage("§f§l--------------------------------------------");
+                                sender.sendMessage("§f§l- §r§6killed §f§l: §r§6(§f§lDefault§r§6) The player loose his camo only when he die.");
+                                sender.sendMessage("§f§l- §r§6damage §f§l: The player loose his camo when he take a damage (the source of the damage dosen't  matter).");
+                                sender.sendMessage("§f§l- §r§6timed §f§l: The player loose his camo when the countdown is over.");
+                                sender.sendMessage("§f§l--------------------------------------------");
                                 return false;
                             default:
                                 sender.sendMessage("§c/camo config uncamo ( damage | killed | timed | help )");
@@ -73,20 +80,26 @@ public class CamoCmd implements CommandExecutor {
                         }
                         switch (args[2]) {
                             case "false":
-//                                mettre config a false
-                                sender.sendMessage("false");
+                                Main.getInstance().getConfig().set("disable", "false");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("disable"));
                                 return false;
                             case "true":
-//                                mettre config a true
-                                sender.sendMessage("true");
+                                Main.getInstance().getConfig().set("disable", "true");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("disable"));
                                 return false;
                             case "unactive":
-//                                mettre config a unactive
-                                sender.sendMessage("unactive");
+                                Main.getInstance().getConfig().set("disable", "unactive");
+                                Main.getInstance().saveConfig();
+                                sender.sendMessage(Main.getInstance().getConfig().getString("disable"));
                                 return false;
                             case "help":
-//                                donner la doc d'aide
-                                sender.sendMessage("help");
+                                sender.sendMessage("§f§l--------------------------------------------");
+                                sender.sendMessage("§f§l- §r§6false §f§l: §r§6(§f§lDefault§r§6) The plugin work properly.");
+                                sender.sendMessage("§f§l- §r§6true §f§l: The plugin don't work and every camo heads get deleted.");
+                                sender.sendMessage("§f§l- §r§6unactive §f§l: The plugins don't work but camo heads is not deleted.");
+                                sender.sendMessage("§f§l--------------------------------------------");
                                 return false;
                             default:
                                 sender.sendMessage("§c/camo config disable ( false | true | unactive )");
